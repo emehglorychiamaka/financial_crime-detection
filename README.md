@@ -34,3 +34,33 @@ The system replicates a bank transfer environment with:
 ├── excel/
 │   └── FinancialCrime.xlsm        # Excel form with VBA button
 └── README.md
+```
+
+# Tech Stack
+Python (pandas, scikit-learn, pyodbc, openpyxl)
+
+Microsoft Excel (VBA-enabled form)
+
+SQL Server (local or cloud)
+
+Optional: Power BI for visual dashboard
+
+
+# How It Works
+User fills the Excel Transfer Form
+
+When the Send button is clicked:
+
+Python captures the form inputs
+
+Auto-detects the sender (logged-in system user)
+
+Validates that the account number is 10 digits
+
+Detects fraud using Isolation Forest
+
+Logs all transactions to SQL
+
+If flagged, adds entry to FraudAlerts
+
+Excel dashboard updates automatically
